@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Profil Masjid</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mosque: {
+                            dark: '#064E3B',
+                            primary: '#047857',
+                            light: '#10B981',
+                            gold: '#F59E0B',
+                            yellow: '#FBBF24',
+                            purple: '#7C3AED',
+                            lightPurple: '#A855F7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-image: url('uploads/mosque_hero.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(4, 120, 87, 0.9), rgba(6, 78, 59, 0.7));
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-gray-50 antialiased selection:bg-mosque-light selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                                            <img src="uploads/profiles/1781961950_logo_logo masjid.png" alt="Logo Masjid" class="w-10 h-10 object-contain">
+                                        <span class="font-bold text-2xl text-mosque-dark tracking-tight">Masjid Al Kautsar</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-mosque-primary font-medium transition-colors">Beranda</a>
+                    <a href="#profil" class="text-gray-600 hover:text-mosque-primary font-medium transition-colors">Profil</a>
+                    <a href="#manajemen" class="text-gray-600 hover:text-mosque-primary font-medium transition-colors">Manajemen</a>
+                    <a href="#artikel" class="text-gray-600 hover:text-mosque-primary font-medium transition-colors">Artikel</a>
+                    <a href="#organisasi" class="text-gray-600 hover:text-mosque-primary font-medium transition-colors">Organisasi</a>
+                    <a href="#kontak" class="text-gray-600 hover:text-mosque-primary font-medium transition-colors">Kontak</a>
+                    <a href="admin/login.php" target="_blank" class="px-5 py-2.5 bg-mosque-primary text-white rounded-full font-medium hover:bg-mosque-dark transition-colors shadow-lg shadow-mosque-primary/30">
+                        Login Admin
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-600 hover:text-mosque-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 pb-32 lg:pt-48 lg:pb-64 flex items-center hero-pattern min-h-screen">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left flex flex-col lg:flex-row items-center">
+            <div class="lg:w-2/3">
+                <span class="inline-block py-1 px-3 rounded-full bg-mosque-gold/20 text-mosque-gold font-semibold text-sm mb-6 border border-mosque-gold/30 backdrop-blur-sm">
+                    Pusat Ibadah & Dakwah
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 anime-hero-title" style="opacity: 0;">
+                    Menjalin Ukhuwah,<br>
+                    <span class="text-mosque-yellow">Memakmurkan Masjid</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto lg:mx-0 anime-hero-desc" style="opacity: 0;">
+                    Selamat datang di website resmi Masjid Al Kautsar. Pusat kegiatan ibadah, pendidikan, dan sosial kemasyarakatan yang membawa rahmat bagi seluruh alam.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#profil" class="anime-hero-btn px-8 py-4 bg-mosque-gold text-white rounded-full font-bold hover:bg-yellow-600 transition-all shadow-lg shadow-mosque-gold/40 flex items-center justify-center gap-2" style="opacity: 0;">
+                        Kenali Kami <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#kontak" class="anime-hero-btn px-8 py-4 bg-white/10 text-white border border-white/30 rounded-full font-bold hover:bg-white/20 backdrop-blur-sm transition-all flex items-center justify-center gap-2" style="opacity: 0;">
+                        Jadwal Kegiatan
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Curve/Wave -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-16 lg:h-32" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.83,121.22,201.5,114.36,242.41,110.37,282.87,100.82,321.39,56.44Z" fill="#F5F5F5"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Statistik Section (Overlapping Hero) -->
+    <section class="relative z-10 -mt-16 sm:-mt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-mosque-primary rounded-2xl p-6 text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 anime-stat-card" style="opacity: 0;">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-users text-2xl"></i>
+                        </div>
+                        <span class="text-4xl font-bold opacity-50">01</span>
+                    </div>
+                    <h3 class="text-3xl font-extrabold mb-1">1,500+</h3>
+                    <p class="text-mosque-light text-sm font-medium">Kapasitas Jamaah</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-900 rounded-2xl p-6 text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 anime-stat-card" style="opacity: 0;">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-book-open text-2xl"></i>
+                        </div>
+                        <span class="text-4xl font-bold text-gray-700">02</span>
+                    </div>
+                    <h3 class="text-3xl font-extrabold mb-1">24</h3>
+                    <p class="text-gray-400 text-sm font-medium">Program Kajian Rutin</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-mosque-gold rounded-2xl p-6 text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 anime-stat-card" style="opacity: 0;">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-hand-holding-heart text-2xl"></i>
+                        </div>
+                        <span class="text-4xl font-bold opacity-50">03</span>
+                    </div>
+                    <h3 class="text-3xl font-extrabold mb-1">15+</h3>
+                    <p class="text-yellow-200 text-sm font-medium">Program Sosial Kemasyarakatan</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-mosque-purple rounded-2xl p-6 text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 anime-stat-card" style="opacity: 0;">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <span class="text-4xl font-bold opacity-50">04</span>
+                    </div>
+                    <h3 class="text-3xl font-extrabold mb-1">350</h3>
+                    <p class="text-purple-200 text-sm font-medium">Santri TPQ & Madin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Masjid Section -->
+    <section id="profil" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 anime-fade-up">
+                <span class="text-mosque-primary font-bold uppercase tracking-wider text-sm">Tentang Kami</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-4">Profil Masjid Al Kautsar</h2>
+                <div class="w-24 h-1 bg-mosque-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 relative anime-fade-up">
+                    <div class="absolute -inset-4 bg-mosque-primary/10 rounded-3xl transform -rotate-3"></div>
+                                            <img src="uploads/profiles/1781960304_img_ChatGPT Image Jun 19, 2026, 04_26_05 PM.png" alt="Masjid Interior" class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+                                        
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-mosque-gold/20 rounded-full flex items-center justify-center text-mosque-gold text-2xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Berdiri Sejak</p>
+                                <p class="text-2xl font-bold text-gray-900">1998</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 anime-fade-up">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Sejarah Singkat</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Masjid Al-Ikhlas didirikan pada tahun 1998 atas inisiatif warga sekitar yang menginginkan pusat ibadah yang dekat dan nyaman. Dibangun di atas tanah wakaf seluas 2000 meter persegi, masjid ini telah mengalami beberapa kali renovasi untuk mengakomodasi jumlah jamaah yang terus bertambah dan memperluas fungsi masjid sebagai pusat pendidikan dan sosial.                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-mosque-primary/10 rounded-xl flex items-center justify-center text-mosque-primary shrink-0">
+                                <i class="fa-solid fa-eye text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900 mb-2">Visi Kami</h4>
+                                <p class="text-gray-600 text-sm">Menjadi masjid paripurna sebagai pusat pembinaan umat yang bertaqwa, cerdas, dan mandiri berlandaskan Al-Qur&#039;an dan As-Sunnah.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-mosque-gold/10 rounded-xl flex items-center justify-center text-mosque-gold shrink-0">
+                                <i class="fa-solid fa-bullseye text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900 mb-2">Misi Kami</h4>
+                                <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                                    <li>Menyelenggarakan peribadatan yang sesuai dengan tuntunan syariat.</li><li>Meningkatkan kualitas pendidikan Islam bagi anak-anak dan dewasa.</li><li>Memberdayakan ekonomi umat melalui ZISWAF.</li>                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manajemen Masjid Section -->
+    <section id="manajemen" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 anime-fade-up">
+                <span class="text-mosque-gold font-bold uppercase tracking-wider text-sm">Layanan & Program</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-4">Manajemen Masjid</h2>
+                <div class="w-24 h-1 bg-mosque-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div class="group bg-gray-50 rounded-3xl p-8 hover:bg-mosque-primary transition-colors duration-300 anime-card-stagger" style="opacity: 0;">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-mosque-primary mb-6 group-hover:text-mosque-primary group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-book-quran text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">Pendidikan &amp; Dakwah</h3>
+                    <p class="text-gray-600 group-hover:text-gray-100 transition-colors leading-relaxed">
+                        Penyelenggaraan Taman Pendidikan Al-Qur&#039;an (TPQ), kajian rutin harian, tahsin untuk dewasa, dan majelis taklim pekanan.                    </p>
+                </div>
+                                <div class="group bg-gray-50 rounded-3xl p-8 hover:bg-mosque-primary transition-colors duration-300 anime-card-stagger" style="opacity: 0;">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-mosque-primary mb-6 group-hover:text-mosque-primary group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hand-holding-dollar text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">Baitul Mal (ZISWAF)</h3>
+                    <p class="text-gray-600 group-hover:text-gray-100 transition-colors leading-relaxed">
+                        Pengelolaan Zakat, Infaq, Shadaqah, dan Wakaf secara profesional dan transparan untuk disalurkan kepada yang berhak menerima.                    </p>
+                </div>
+                                <div class="group bg-gray-50 rounded-3xl p-8 hover:bg-mosque-primary transition-colors duration-300 anime-card-stagger" style="opacity: 0;">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-mosque-primary mb-6 group-hover:text-mosque-primary group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-kit-medical text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">Sosial &amp; Kesehatan</h3>
+                    <p class="text-gray-600 group-hover:text-gray-100 transition-colors leading-relaxed">
+                        Layanan ambulan gratis, klinik kesehatan masjid, santunan anak yatim dan dhuafa, serta tanggap bencana alam.                    </p>
+                </div>
+                            </div>
+        </div>
+    </section>
+
+    <!-- Artikel Terbaru Section -->
+    <section id="artikel" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 anime-fade-up">
+                <div>
+                    <span class="text-mosque-purple font-bold uppercase tracking-wider text-sm">Berita & Publikasi</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Artikel Terbaru</h2>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center gap-2 text-mosque-primary font-semibold hover:text-mosque-dark transition-colors">
+                    Lihat Semua <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                
+                                    <div class="col-span-full text-center text-gray-500 py-10">Belum ada artikel.</div>
+                            </div>
+            
+            <div class="mt-10 text-center md:hidden">
+                <a href="#" class="inline-flex items-center gap-2 text-white bg-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors">
+                    Lihat Semua Artikel
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organisasi Section -->
+    <section id="organisasi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 anime-fade-up">
+                <span class="text-mosque-primary font-bold uppercase tracking-wider text-sm">Pengurus & Takmir</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-4">Struktur Organisasi</h2>
+                <div class="w-24 h-1 bg-mosque-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                                
+                                    <div class="col-span-full text-center text-gray-500 py-10">Belum ada data pengurus.</div>
+                            </div>
+        </div>
+    </section>
+
+    <!-- Daftar Kontak Section -->
+    <section id="kontak" class="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <pattern id="islamic-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    <circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#islamic-pattern)" />
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 anime-fade-up">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-4">Hubungi Kami</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Kami senantiasa terbuka untuk kritik, saran, pertanyaan, maupun diskusi terkait program dan kegiatan masjid.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8 anime-fade-up">
+                    <div class="flex items-start gap-6 bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <div class="w-14 h-14 bg-mosque-primary rounded-full flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-location-dot text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Alamat Lengkap</h3>
+                            <p class="text-gray-400">Jl. Pangeran Diponegoro No. 123, Kelurahan Suka Maju, Kecamatan Damai, Kota Sejahtera, 12345</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6 bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <div class="w-14 h-14 bg-mosque-gold rounded-full flex items-center justify-center shrink-0 text-gray-900">
+                            <i class="fa-solid fa-phone text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Telepon & WhatsApp</h3>
+                            <p class="text-gray-400 mb-1">Telepon: (021) 1234-5678</p>
+                            <p class="text-gray-400">WhatsApp: +62 812-3456-7890</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6 bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <div class="w-14 h-14 bg-mosque-purple rounded-full flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-envelope text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Email</h3>
+                            <p class="text-gray-400">info@masjidalikhlas.org</p>
+                                                            <p class="text-gray-400">takmir@masjidalikhlas.org</p>
+                                                    </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form & Map placeholder -->
+                <div class="bg-white rounded-3xl p-8 text-gray-900 shadow-2xl anime-fade-up">
+                    <h3 class="text-2xl font-bold mb-6">Kirim Pesan</h3>
+                    <form action="#" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-mosque-primary focus:border-transparent transition-shadow" placeholder="Nama Anda">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-mosque-primary focus:border-transparent transition-shadow" placeholder="email@anda.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-mosque-primary focus:border-transparent transition-shadow" placeholder="Tujuan pesan">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-mosque-primary focus:border-transparent transition-shadow" placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-mosque-primary text-white rounded-xl font-bold hover:bg-mosque-dark transition-colors shadow-lg shadow-mosque-primary/30">
+                            Kirim Pesan Sekarang
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-mosque-primary rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-mosque text-sm"></i>
+                        </div>
+                        <span class="font-bold text-xl text-white tracking-tight">Masjid Al Kautsar</span>
+                    </div>
+                    <p class="max-w-md mb-6">Membangun generasi islami yang bertaqwa, cerdas, dan mandiri untuk kemajuan umat dan kesejahteraan masyarakat.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-mosque-primary hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-mosque-primary hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-mosque-primary hover:text-white transition-all"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="hover:text-mosque-primary transition-colors">Beranda</a></li>
+                        <li><a href="#profil" class="hover:text-mosque-primary transition-colors">Profil Masjid</a></li>
+                        <li><a href="#manajemen" class="hover:text-mosque-primary transition-colors">Program & Layanan</a></li>
+                        <li><a href="#artikel" class="hover:text-mosque-primary transition-colors">Artikel Terbaru</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">Bantuan</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-mosque-primary transition-colors">Cara Berdonasi</a></li>
+                        <li><a href="#" class="hover:text-mosque-primary transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-mosque-primary transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="admin/login.php" target="_blank" class="hover:text-mosque-primary transition-colors">Login Pengurus</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 Masjid Al Kautsar. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Didesain dengan <i class="fa-solid fa-heart text-red-500 mx-1"></i> untuk Umat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for sticky navbar shadow -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+    
+    <!-- Anime.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Animasi Interaktif -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animasi Hero Title
+            anime({
+                targets: '.anime-hero-title',
+                translateY: [50, 0],
+                opacity: [0, 1],
+                duration: 1200,
+                easing: 'easeOutExpo',
+                delay: 200
+            });
+
+            // Animasi Hero Desc
+            anime({
+                targets: '.anime-hero-desc',
+                translateY: [30, 0],
+                opacity: [0, 1],
+                duration: 1000,
+                easing: 'easeOutExpo',
+                delay: 400
+            });
+
+            // Animasi Tombol
+            anime({
+                targets: '.anime-hero-btn',
+                scale: [0.9, 1],
+                opacity: [0, 1],
+                duration: 800,
+                easing: 'easeOutBack',
+                delay: anime.stagger(150, {start: 600})
+            });
+
+            // Animasi Kartu Statistik (Stagger)
+            anime({
+                targets: '.anime-stat-card',
+                translateY: [40, 0],
+                opacity: [0, 1],
+                duration: 1000,
+                easing: 'easeOutExpo',
+                delay: anime.stagger(100, {start: 800})
+            });
+
+            // Intersection Observer untuk animasi scroll-triggered
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const fadeUpObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        anime({
+                            targets: entry.target,
+                            translateY: [50, 0],
+                            opacity: [0, 1],
+                            duration: 1000,
+                            easing: 'easeOutExpo'
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.anime-fade-up').forEach(el => {
+                el.style.opacity = '0';
+                fadeUpObserver.observe(el);
+            });
+            
+            const staggerObserver = new IntersectionObserver((entries, observer) => {
+                let targets = entries.filter(e => e.isIntersecting).map(e => {
+                    observer.unobserve(e.target);
+                    return e.target;
+                });
+                
+                if (targets.length > 0) {
+                    anime({
+                        targets: targets,
+                        translateY: [40, 0],
+                        opacity: [0, 1],
+                        duration: 800,
+                        easing: 'easeOutExpo',
+                        delay: anime.stagger(150)
+                    });
+                }
+            }, observerOptions);
+            
+            document.querySelectorAll('.anime-card-stagger').forEach(el => {
+                el.style.opacity = '0';
+                staggerObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
